@@ -10,10 +10,11 @@ import java.util.List;
 public interface UserService {
 
     User createUser(User user) throws UserNameTakenException;
-    User getUserById(Long id) throws UserNotFoundException;
+    User getUserByUserName(String userName) throws UserNameNotFoundException;
     User getUserByEmail(String email) throws UserNotFoundException;
+    User getUserById(Long id) throws UserNotFoundException;
     List<User> getAll();
-    User update(Long id, User userDetail) throws UserNotFoundException;
-    void delete(Long id);
+    User updateUser(Long id, User userDetail) throws UserNotFoundException;
+    void deleteUser(String email) throws UserNotFoundException;
 
 }
